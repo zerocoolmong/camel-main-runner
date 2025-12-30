@@ -69,15 +69,17 @@ public class RunnerRoute extends RouteBuilder {
                     exchange.getIn().setBody(mapper.writeValueAsString(errorResponse));
                     log.error("Error processing job " + jobId + ": " + cause.getMessage(), cause);
                 })
-                .to("amqp:queue:" + responseQueue);
+                .to("rabbitmq:" + responseQueue);
 
         // Main route for executing Java applications
-        from("amqp:queue:" + requestQueue +
-                "?concurrentConsumers=" + properties.getProperty("rabbitmq.concurrent.consumers", "1"))
+        from("rabbitmq:direct-exchange?queue="
+                + requestQueue
+                + "&declare=false")
                 .routeId("java-executor-route")
                 .log("========== RECEIVED MESSAGE ==========")
                 .log("Message Body: ${body}")
                 .log("======================================")
+
 
                 // Store original body for error handling
                 .process(exchange -> {
@@ -159,7 +161,7 @@ public class RunnerRoute extends RouteBuilder {
                 })
 
                 // Send response back to RabbitMQ
-                .to("amqp:queue:" + responseQueue)
+                .to("rabbitmq:" + responseQueue)
                 .log("========== RESPONSE SENT ==========")
                 .log("Response: ${body}")
                 .log("===================================");

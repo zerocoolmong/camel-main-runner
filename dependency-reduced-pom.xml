@@ -46,6 +46,6 @@
   </build>
   <properties>
     <maven.compiler.release>21</maven.compiler.release>
-    <camel.version>4.3.0</camel.version>
+    <camel.version>3.22.2</camel.version>
   </properties>
 </project>

@@ -1,9 +1,8 @@
 package com.example.camel;
 
 import org.apache.camel.CamelContext;
-import org.apache.camel.component.amqp.AMQPComponent;
+import org.apache.camel.component.rabbitmq.RabbitMQComponent;
 import org.apache.camel.main.Main;
-import org.apache.qpid.jms.JmsConnectionFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +11,7 @@ import java.util.Properties;
 public class Application {
 
 
-    private static Properties properties = new Properties();
+    private static final Properties properties = new Properties();
 
     public static void main(String[] args) throws Exception {
 
@@ -21,8 +20,8 @@ public class Application {
 
         Main main = new Main();
 
-        // Configure AMQP component
-        configureAmqpComponent(main);
+        // Configure RabbitMQ component
+        configureRabbitMqComponent(main);
 
         // Add route
         main.configure().addRoutesBuilder(new RunnerRoute(properties));
@@ -35,35 +34,27 @@ public class Application {
         main.run();
     }
 
-    private static void configureAmqpComponent(Main main) {
+    private static void configureRabbitMqComponent(Main main) {
         main.addMainListener(new org.apache.camel.main.MainListenerSupport() {
             @Override
             public void afterConfigure(org.apache.camel.main.BaseMainSupport baseMain) {
                 try {
                     CamelContext context = baseMain.getCamelContext();
 
-                    // Build RabbitMQ connection URI
-                    String host = properties.getProperty("rabbitmq.host", "localhost");
-                    String port = properties.getProperty("rabbitmq.port", "5672");
-                    String username = properties.getProperty("rabbitmq.username", "guest");
-                    String password = properties.getProperty("rabbitmq.password", "guest");
-                    String vhost = properties.getProperty("rabbitmq.vhost", "/");
+                    // Create and configure RabbitMQ component
+                    RabbitMQComponent rabbitmq = new RabbitMQComponent();
+                    rabbitmq.setHostname(properties.getProperty("rabbitmq.host", "localhost"));
+                    rabbitmq.setPortNumber(Integer.parseInt(properties.getProperty("rabbitmq.port", "5672")));
+                    rabbitmq.setUsername(properties.getProperty("rabbitmq.username", "guest"));
+                    rabbitmq.setPassword(properties.getProperty("rabbitmq.password", "guest"));
+                    rabbitmq.setVhost(properties.getProperty("rabbitmq.vhost", "/"));
 
-                    String uri = String.format("amqp://%s:%s%s",
-                            host, port, vhost);
+                    context.addComponent("rabbitmq", rabbitmq);
 
-                    JmsConnectionFactory factory = new JmsConnectionFactory(uri);
-                    factory.setUsername(username);
-                    factory.setPassword(password);
-
-                    AMQPComponent amqp = new AMQPComponent();
-                    amqp.setConnectionFactory(factory);
-
-                    context.addComponent("amqp", amqp);
-
-                    System.out.println("AMQP component configured successfully");
+                    System.out.println("RabbitMQ component configured successfully");
+                    System.out.println("Connected to: " + rabbitmq.getHostname() + ":" + rabbitmq.getPortNumber());
                 } catch (Exception ex) {
-                    System.err.println("Failed to configure AMQP component: " + ex.getMessage());
+                    System.err.println("Failed to configure RabbitMQ component: " + ex.getMessage());
                     ex.printStackTrace();
                     throw new RuntimeException(ex);
                 }
