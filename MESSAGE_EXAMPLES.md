@@ -2,6 +2,52 @@
 
 This document provides examples of request and response messages for the Java Executor Service.
 
+## INB Automation Tool Example
+
+### Running INB Automation Test
+
+Send this JSON to `Automation.MQ.CommandQueue` to execute the INB automation tool:
+
+```json
+{
+  "JobId": "inb-test-001",
+  "Arguments": [
+    "--email", "automation.inb.dev.test101@yopmail.com",
+    "--password", "EpfNDE8vVgYpMjV@",
+    "--org", "Demo",
+    "--env", "CRUDTest",
+    "--browser", "api"
+  ]
+}
+```
+
+This will execute:
+```bash
+java -jar target/INB-AUTOMATION-TOOL-9.0.1-dev.jar --email "automation.inb.dev.test101@yopmail.com" --password "EpfNDE8vVgYpMjV@" --org Demo --env CRUDTest --browser api
+```
+
+**Note:** The jar path `target/INB-AUTOMATION-TOOL-9.0.1-dev.jar` is configured as the default in `application.properties`, so you don't need to include `JarPath` in the message.
+
+### With Custom Jar Path
+
+If you want to specify a different jar location:
+
+```json
+{
+  "JobId": "inb-test-002",
+  "JarPath": "D:/SELISE/INB/Automation/target/INB-AUTOMATION-TOOL-9.0.1-dev.jar",
+  "Arguments": [
+    "--email", "automation.inb.dev.test101@yopmail.com",
+    "--password", "EpfNDE8vVgYpMjV@",
+    "--org", "Demo",
+    "--env", "CRUDTest",
+    "--browser", "api"
+  ]
+}
+```
+
+---
+
 ## Request Messages
 
 ### Example 1: Basic Execution with Arguments

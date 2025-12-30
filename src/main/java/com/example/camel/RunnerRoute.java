@@ -67,7 +67,7 @@ public class RunnerRoute extends RouteBuilder {
                     errorResponse.put("Timestamp", LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
 
                     exchange.getIn().setBody(mapper.writeValueAsString(errorResponse));
-                    log.error("Error processing job " + jobId + ": " + cause.getMessage(), cause);
+                    log.error("Error processing job {}: {}", jobId, cause.getMessage(), cause);
                 })
                 .to("rabbitmq:" + responseQueue);
 
@@ -98,18 +98,26 @@ public class RunnerRoute extends RouteBuilder {
                             ? request.get("JarPath").asText()
                             : properties.getProperty("java.app.jar.path");
 
-                    List<String> arguments = new ArrayList<>();
-                    if (request.has("Arguments") && request.get("Arguments").isArray()) {
-                        for (JsonNode arg : request.get("Arguments")) {
-                            arguments.add(arg.asText());
-                        }
-                    }
+//                    List<String> arguments = new ArrayList<>();
+//                    if (request.has("Arguments") && request.get("Arguments").isArray()) {
+//                        for (JsonNode arg : request.get("Arguments")) {
+//                            arguments.add(arg.asText());
+//                        }
+//                    }
+
+                    List<String> arguments = List.of(
+                            "--email", "automation.inb.dev.test101@yopmail.com",
+                            "--password", "EpfNDE8vVgYpMjV@",
+                            "--org", "Demo",
+                            "--env", "CRUDTest",
+                            "--browser", "api"
+                    );
 
                     // Build command
                     List<String> command = new ArrayList<>();
                     command.add("java");
                     command.add("-jar");
-                    command.add(jarPath);
+                    command.add("D:\\SELISE\\INB\\Automation\\selise-automation-cloudapp\\target\\INB-AUTOMATION-TOOL-9.0.1-dev.jar");
                     command.addAll(arguments);
 
                     log.info("Executing Job " + jobId + ": " + String.join(" ", command));

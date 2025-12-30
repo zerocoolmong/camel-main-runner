@@ -1,0 +1,144 @@
+2025-12-30 11:30:30.725 [main] INFO  c.s.i.a.a.AutomationArgumentParser - Parsed arguments: email=a***@yopmail.com, org=Demo, env=CRUDTest, browser=api, headless=false
+2025-12-30 11:30:30.736 [main] INFO  c.s.inb.application.InbAutomationApp - Delegating to BackendAutomationRunner for API automation
+2025-12-30 11:30:30.737 [main] INFO  c.s.i.a.a.AutomationArgumentParser - Parsed arguments: email=a***@yopmail.com, org=Demo, env=CRUDTest, browser=api, headless=false
+2025-12-30 11:30:30.737 [main] INFO  c.s.i.a.BackendAutomationRunner - Backend Automation Started with environment: CRUDTest
+2025-12-30 11:30:30.820 [main] INFO  c.s.i.a.config.ConfigurationManager - Instance configuration loaded successfully.
+2025-12-30 11:30:30.821 [main] INFO  c.s.i.a.auth.AuthenticationHelper - Authenticating user: a***@yopmail.com
+2025-12-30 11:30:30.823 [main] INFO  c.s.i.a.auth.IdentityServiceClient - Authenticating user: a***@yopmail.com
+2025-12-30 11:30:31.581 [main] INFO  c.s.i.a.auth.IdentityServiceClient - ✓ Authentication successful
+2025-12-30 11:30:31.581 [main] INFO  c.s.i.a.auth.IdentityServiceClient - Retrieving user context...
+2025-12-30 11:30:31.818 [main] INFO  c.s.i.a.auth.IdentityServiceClient - ✓ User context retrieved: 3 organization(s) accessible
+2025-12-30 11:30:31.819 [main] INFO  c.s.i.a.auth.OrganizationSelector - Organization specified: Demo
+2025-12-30 11:30:31.819 [main] INFO  c.s.i.a.auth.OrganizationSelector - ✓ Organization validated by name: Demo (c3c8a454-9530-41ba-8a43-c4cbd0308fbc)
+2025-12-30 11:30:31.820 [main] INFO  c.s.inb.automation.auth.UserContext - Selected organization: Demo (c3c8a454-9530-41ba-8a43-c4cbd0308fbc)
+2025-12-30 11:30:31.820 [main] INFO  c.s.i.a.auth.AuthenticationHelper - Authenticated as: Xiao Doe | Organization: c3c8a454-9530-41ba-8a43-c4cbd0308fbc
+2025-12-30 11:30:31.821 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - BackendAutomationAPIService initialized with token-based authentication
+2025-12-30 11:30:31.822 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Retrieving API test plan for organization: c3c8a454-9530-41ba-8a43-c4cbd0308fbc and environment: CRUDTest
+2025-12-30 11:30:31.840 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Response Code: 200
+2025-12-30 11:30:31.846 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Retrieved 12 API test plans from API
+2025-12-30 11:30:31.848 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Found API test plan for environment: CRUDTest
+2025-12-30 11:30:31.848 [main] INFO  c.s.i.a.BackendAutomationRunner - Retrieved API test plan: 50f6c956-3817-4473-b35b-4d682f423504
+2025-12-30 11:30:31.848 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Fetching global variables for test plan ID: 50f6c956-3817-4473-b35b-4d682f423504 (Organization: c3c8a454-9530-41ba-8a43-c4cbd0308fbc)
+2025-12-30 11:30:31.865 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - GlobalVariables API Response Code: 200 for organization: c3c8a454-9530-41ba-8a43-c4cbd0308fbc
+2025-12-30 11:30:31.866 [main] WARN  c.s.i.a.a.BackendAutomationAPIService - Could not retrieve global variables for test plan '50f6c956-3817-4473-b35b-4d682f423504' (Organization: 'c3c8a454-9530-41ba-8a43-c4cbd0308fbc'): JSONObject["Data"] is not a JSONObject (class org.json.JSONArray).. Automation will continue.
+2025-12-30 11:30:31.866 [main] INFO  c.s.i.a.BackendAutomationRunner - ℹ No global variables for this test plan (automation will proceed normally)
+2025-12-30 11:30:31.866 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Retrieving API test suites for test plan ID: 50f6c956-3817-4473-b35b-4d682f423504 and organization ID: c3c8a454-9530-41ba-8a43-c4cbd0308fbc
+2025-12-30 11:30:31.895 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Response Code: 200
+2025-12-30 11:30:31.897 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Retrieved 12 API test suites from API
+2025-12-30 11:30:31.909 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Found 1 API test suites for test plan ID: 50f6c956-3817-4473-b35b-4d682f423504
+2025-12-30 11:30:31.910 [main] INFO  c.s.i.a.BackendAutomationRunner - Found 1 API test suites for execution
+2025-12-30 11:30:31.911 [main] INFO  c.s.i.a.utils.ApiReportingUtils - API report will be generated at: Reports/30122025_Demo_CRUDTest_113031_API_AutomationReport.html
+2025-12-30 11:30:32.052 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - BackendAutomationAPIService initialized with token-based authentication
+2025-12-30 11:30:32.359 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - RestAssured has been statically configured to relax HTTPS validation and enable content decoding.
+2025-12-30 11:30:32.363 [main] INFO  c.s.i.a.s.ApiTestSuiteExecutor - ApiTestSuiteExecutor initialized successfully for API automation
+2025-12-30 11:30:32.388 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] Starting API Action: 1. Create New Post
+2025-12-30 11:30:32.389 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [HYBRID] Executing 1. Create New Post action: API
+2025-12-30 11:30:32.389 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Starting API Action: 1. Create New Post
+2025-12-30 11:30:32.669 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Request Method: POST
+2025-12-30 11:30:32.669 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Request URL: https://683d6eb6199a0039e9e56e4a.mockapi.io/api/v1/posts
+2025-12-30 11:30:32.669 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Request Headers: {Accept=application/json, Content-Type=application/json; charset=UTF-8}
+2025-12-30 11:30:32.670 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Request Body: {"userId": 55, "title": "My Test Post via Automation","body": "This content is generated by the INB Automation Tool.","status": "draft","tags": ["automation", "poc", "testing"],"isFeatured": false, "viewCount": 0}
+2025-12-30 11:30:34.510 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Response Headers: Access-Control-Allow-Headers=X-Requested-With,Content-Type,Cache-Control,access_token
+Access-Control-Allow-Methods=GET,PUT,POST,DELETE,OPTIONS
+Access-Control-Allow-Origin=*
+Content-Length=251
+Content-Type=application/json
+Date=Tue, 30 Dec 2025 05:30:32 GMT
+Nel={"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Report-To={"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=H3jju14THKkYeFm%2BaRN46uVsNhgxFCtCWsJCrWK1ShE%3D\u0026sid=1b10b0ff-8a76-4548-befa-353fc6c6c045\u0026ts=1767072632"}],"max_age":3600}
+Reporting-Endpoints=heroku-nel="https://nel.heroku.com/reports?s=H3jju14THKkYeFm%2BaRN46uVsNhgxFCtCWsJCrWK1ShE%3D&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&ts=1767072632"
+Server=Heroku
+Via=1.1 heroku-router
+X-Powered-By=Express
+2025-12-30 11:30:34.511 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Response Content-Type: application/json
+2025-12-30 11:30:34.514 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Response FirstBytesHex: 7B 22 63 72 65 61 74 65 64 41 74 22 3A 22 32 30 ...
+2025-12-30 11:30:34.517 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] Response Status Code: 201
+2025-12-30 11:30:34.518 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] Response Time: 1840 ms
+2025-12-30 11:30:34.518 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] Response Body: {"createdAt":"2025-12-29T05:54:39.248Z","userId":55,"title":"My Test Post via Automation","body":"This content is generated by the INB Automation Tool.","status":"draft","tags":["automation","poc","testing"],"isFeatured":false,"viewCount":0,"id":"26"}
+2025-12-30 11:30:34.521 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] SUCCESS: Assertion PASSED. Actual: 201
+2025-12-30 11:30:34.946 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] SUCCESS: Assertion PASSED. Actual: My Test Post via Automation
+2025-12-30 11:30:34.961 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] SUCCESS: Assertion PASSED. Actual: 26
+2025-12-30 11:30:34.971 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] SUCCESS: Assertion PASSED. Actual: 55
+2025-12-30 11:30:35.012 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Captured variable 'newPostTitle' with path 'title' resulted in value: My Test Post via Automation
+2025-12-30 11:30:35.012 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Captured variable 'newPostId' with path 'id' resulted in value: 26
+2025-12-30 11:30:35.012 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] SUCCESS: API Action '1. Create New Post' PASSED.
+2025-12-30 11:30:35.013 [main] INFO  c.s.i.a.handlers.ApiExecutionHandler - [CROSS-SUITE] Suite 'CRUD API Test' captured 2 new variables (total: 2)
+2025-12-30 11:30:35.013 [main] INFO  c.s.i.a.handlers.ApiExecutionHandler - Total API Execution Time: 2 seconds
+2025-12-30 11:30:35.242 [main] INFO  c.s.i.a.handlers.ApiExecutionHandler - API test execution completed. Report generated successfully.
+2025-12-30 11:30:35.242 [main] INFO  c.s.i.a.handlers.ApiExecutionHandler - Sending API report to cloud app with test plan ID: 50f6c956-3817-4473-b35b-4d682f423504
+2025-12-30 11:30:35.353 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Response Code: 200
+2025-12-30 11:30:35.354 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - API report sent successfully. Report Name: 30122025_Demo_CRUDTest_113031_API_AutomationReport.html
+2025-12-30 11:30:35.354 [main] INFO  c.s.i.a.handlers.ApiExecutionHandler - API report sent to cloud app successfully
+2025-12-30 11:30:36.361 [main] INFO  c.s.i.a.BackendAutomationRunner - Backend Automation Completed
+2025-12-30 17:35:02.312 [main] INFO  c.s.i.a.a.AutomationArgumentParser - Parsed arguments: email=a***@yopmail.com, org=Demo, env=CRUDTest, browser=api, headless=false
+2025-12-30 17:35:02.342 [main] INFO  c.s.inb.application.InbAutomationApp - Delegating to BackendAutomationRunner for API automation
+2025-12-30 17:35:02.344 [main] INFO  c.s.i.a.a.AutomationArgumentParser - Parsed arguments: email=a***@yopmail.com, org=Demo, env=CRUDTest, browser=api, headless=false
+2025-12-30 17:35:02.344 [main] INFO  c.s.i.a.BackendAutomationRunner - Backend Automation Started with environment: CRUDTest
+2025-12-30 17:35:02.490 [main] INFO  c.s.i.a.config.ConfigurationManager - Instance configuration loaded successfully.
+2025-12-30 17:35:02.491 [main] INFO  c.s.i.a.auth.AuthenticationHelper - Authenticating user: a***@yopmail.com
+2025-12-30 17:35:02.493 [main] INFO  c.s.i.a.auth.IdentityServiceClient - Authenticating user: a***@yopmail.com
+2025-12-30 17:35:03.451 [main] INFO  c.s.i.a.auth.IdentityServiceClient - ✓ Authentication successful
+2025-12-30 17:35:03.451 [main] INFO  c.s.i.a.auth.IdentityServiceClient - Retrieving user context...
+2025-12-30 17:35:03.655 [main] INFO  c.s.i.a.auth.IdentityServiceClient - ✓ User context retrieved: 3 organization(s) accessible
+2025-12-30 17:35:03.655 [main] INFO  c.s.i.a.auth.OrganizationSelector - Organization specified: Demo
+2025-12-30 17:35:03.655 [main] INFO  c.s.i.a.auth.OrganizationSelector - ✓ Organization validated by name: Demo (c3c8a454-9530-41ba-8a43-c4cbd0308fbc)
+2025-12-30 17:35:03.656 [main] INFO  c.s.inb.automation.auth.UserContext - Selected organization: Demo (c3c8a454-9530-41ba-8a43-c4cbd0308fbc)
+2025-12-30 17:35:03.657 [main] INFO  c.s.i.a.auth.AuthenticationHelper - Authenticated as: Xiao Doe | Organization: c3c8a454-9530-41ba-8a43-c4cbd0308fbc
+2025-12-30 17:35:03.658 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - BackendAutomationAPIService initialized with token-based authentication
+2025-12-30 17:35:03.658 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Retrieving API test plan for organization: c3c8a454-9530-41ba-8a43-c4cbd0308fbc and environment: CRUDTest
+2025-12-30 17:35:03.678 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Response Code: 200
+2025-12-30 17:35:03.684 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Retrieved 12 API test plans from API
+2025-12-30 17:35:03.684 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Found API test plan for environment: CRUDTest
+2025-12-30 17:35:03.685 [main] INFO  c.s.i.a.BackendAutomationRunner - Retrieved API test plan: 50f6c956-3817-4473-b35b-4d682f423504
+2025-12-30 17:35:03.685 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Fetching global variables for test plan ID: 50f6c956-3817-4473-b35b-4d682f423504 (Organization: c3c8a454-9530-41ba-8a43-c4cbd0308fbc)
+2025-12-30 17:35:03.705 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - GlobalVariables API Response Code: 200 for organization: c3c8a454-9530-41ba-8a43-c4cbd0308fbc
+2025-12-30 17:35:03.706 [main] WARN  c.s.i.a.a.BackendAutomationAPIService - Could not retrieve global variables for test plan '50f6c956-3817-4473-b35b-4d682f423504' (Organization: 'c3c8a454-9530-41ba-8a43-c4cbd0308fbc'): JSONObject["Data"] is not a JSONObject (class org.json.JSONArray).. Automation will continue.
+2025-12-30 17:35:03.706 [main] INFO  c.s.i.a.BackendAutomationRunner - ℹ No global variables for this test plan (automation will proceed normally)
+2025-12-30 17:35:03.706 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Retrieving API test suites for test plan ID: 50f6c956-3817-4473-b35b-4d682f423504 and organization ID: c3c8a454-9530-41ba-8a43-c4cbd0308fbc
+2025-12-30 17:35:03.734 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Response Code: 200
+2025-12-30 17:35:03.736 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Retrieved 12 API test suites from API
+2025-12-30 17:35:03.747 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Found 1 API test suites for test plan ID: 50f6c956-3817-4473-b35b-4d682f423504
+2025-12-30 17:35:03.749 [main] INFO  c.s.i.a.BackendAutomationRunner - Found 1 API test suites for execution
+2025-12-30 17:35:03.751 [main] INFO  c.s.i.a.utils.ApiReportingUtils - API report will be generated at: Reports/30122025_Demo_CRUDTest_173503_API_AutomationReport.html
+2025-12-30 17:35:03.907 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - BackendAutomationAPIService initialized with token-based authentication
+2025-12-30 17:35:04.253 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - RestAssured has been statically configured to relax HTTPS validation and enable content decoding.
+2025-12-30 17:35:04.257 [main] INFO  c.s.i.a.s.ApiTestSuiteExecutor - ApiTestSuiteExecutor initialized successfully for API automation
+2025-12-30 17:35:04.276 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] Starting API Action: 1. Create New Post
+2025-12-30 17:35:04.277 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [HYBRID] Executing 1. Create New Post action: API
+2025-12-30 17:35:04.277 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Starting API Action: 1. Create New Post
+2025-12-30 17:35:04.513 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Request Method: POST
+2025-12-30 17:35:04.513 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Request URL: https://683d6eb6199a0039e9e56e4a.mockapi.io/api/v1/posts
+2025-12-30 17:35:04.513 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Request Headers: {Accept=application/json, Content-Type=application/json; charset=UTF-8}
+2025-12-30 17:35:04.514 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Request Body: {"userId": 55, "title": "My Test Post via Automation","body": "This content is generated by the INB Automation Tool.","status": "draft","tags": ["automation", "poc", "testing"],"isFeatured": false, "viewCount": 0}
+2025-12-30 17:35:06.755 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Response Headers: Access-Control-Allow-Headers=X-Requested-With,Content-Type,Cache-Control,access_token
+Access-Control-Allow-Methods=GET,PUT,POST,DELETE,OPTIONS
+Access-Control-Allow-Origin=*
+Content-Length=251
+Content-Type=application/json
+Date=Tue, 30 Dec 2025 11:35:04 GMT
+Nel={"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Report-To={"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=w12%2BNOcMFjE2rJshGHHJ%2BcLWLSSOUlrMxaPxkVSlJAw%3D\u0026sid=1b10b0ff-8a76-4548-befa-353fc6c6c045\u0026ts=1767094504"}],"max_age":3600}
+Reporting-Endpoints=heroku-nel="https://nel.heroku.com/reports?s=w12%2BNOcMFjE2rJshGHHJ%2BcLWLSSOUlrMxaPxkVSlJAw%3D&sid=1b10b0ff-8a76-4548-befa-353fc6c6c045&ts=1767094504"
+Server=Heroku
+Via=1.1 heroku-router
+X-Powered-By=Express
+2025-12-30 17:35:06.755 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Response Content-Type: application/json
+2025-12-30 17:35:06.758 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Response FirstBytesHex: 7B 22 63 72 65 61 74 65 64 41 74 22 3A 22 32 30 ...
+2025-12-30 17:35:06.762 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] Response Status Code: 201
+2025-12-30 17:35:06.762 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] Response Time: 2241 ms
+2025-12-30 17:35:06.762 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] Response Body: {"createdAt":"2025-12-29T23:07:34.674Z","userId":55,"title":"My Test Post via Automation","body":"This content is generated by the INB Automation Tool.","status":"draft","tags":["automation","poc","testing"],"isFeatured":false,"viewCount":0,"id":"27"}
+2025-12-30 17:35:06.764 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] SUCCESS: Assertion PASSED. Actual: 201
+2025-12-30 17:35:07.162 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] SUCCESS: Assertion PASSED. Actual: My Test Post via Automation
+2025-12-30 17:35:07.172 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] SUCCESS: Assertion PASSED. Actual: 27
+2025-12-30 17:35:07.181 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] SUCCESS: Assertion PASSED. Actual: 55
+2025-12-30 17:35:07.213 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Captured variable 'newPostTitle' with path 'title' resulted in value: My Test Post via Automation
+2025-12-30 17:35:07.214 [main] INFO  c.s.i.a.handlers.ApiActionExecutor - [API] Captured variable 'newPostId' with path 'id' resulted in value: 27
+2025-12-30 17:35:07.214 [main] INFO  c.s.i.a.utils.ApiReportingUtils - [API] SUCCESS: API Action '1. Create New Post' PASSED.
+2025-12-30 17:35:07.214 [main] INFO  c.s.i.a.handlers.ApiExecutionHandler - [CROSS-SUITE] Suite 'CRUD API Test' captured 2 new variables (total: 2)
+2025-12-30 17:35:07.214 [main] INFO  c.s.i.a.handlers.ApiExecutionHandler - Total API Execution Time: 2 seconds
+2025-12-30 17:35:07.491 [main] INFO  c.s.i.a.handlers.ApiExecutionHandler - API test execution completed. Report generated successfully.
+2025-12-30 17:35:07.491 [main] INFO  c.s.i.a.handlers.ApiExecutionHandler - Sending API report to cloud app with test plan ID: 50f6c956-3817-4473-b35b-4d682f423504
+2025-12-30 17:35:07.670 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - Response Code: 200
+2025-12-30 17:35:07.672 [main] INFO  c.s.i.a.a.BackendAutomationAPIService - API report sent successfully. Report Name: 30122025_Demo_CRUDTest_173503_API_AutomationReport.html
+2025-12-30 17:35:07.672 [main] INFO  c.s.i.a.handlers.ApiExecutionHandler - API report sent to cloud app successfully
+2025-12-30 17:35:08.685 [main] INFO  c.s.i.a.BackendAutomationRunner - Backend Automation Completed
