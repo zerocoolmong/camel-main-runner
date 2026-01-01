@@ -77,8 +77,8 @@ public class RunnerRoute extends RouteBuilder {
                 + "&declare=false")
                 .routeId("java-executor-route")
                 .log("========== RECEIVED MESSAGE ==========")
-                .log("Message Body: ${body}")
-                .log("======================================")
+                //.log("Message Body: ${body}")
+                //.log("======================================")
 
 
                 // Store original body for error handling
@@ -92,11 +92,42 @@ public class RunnerRoute extends RouteBuilder {
                     ObjectMapper mapper = new ObjectMapper();
                     JsonNode request = mapper.readTree(exchange.getIn().getBody(String.class));
 
+                    log.info("Request response mong camel: {}", request);
+
+                    // Parse Body
+                    JsonNode body = request.has("Body") ? request.get("Body") : null;
+
+                    // Parse Headers
+                    JsonNode headers = request.has("Headers") ? request.get("Headers") : null;
+
+                    // Parse SecurityContext from Headers
+                    JsonNode securityContext = null;
+                    if (headers != null && headers.has("SecurityContext")) {
+                        securityContext = headers.get("SecurityContext");
+                    }
+
+                    log.info("Body: {}", body);
+                    log.info("Headers: {}", headers);
+                    log.info("SecurityContext: {}", securityContext);
+
                     // Extract request parameters
                     String jobId = request.has("JobId") ? request.get("JobId").asText() : "unknown";
-                    String jarPath = request.has("JarPath")
-                            ? request.get("JarPath").asText()
-                            : properties.getProperty("java.app.jar.path");
+
+                    // Example: Extract values from Body
+                    String exampleBodyField = (body != null && body.has("Environment"))
+                        ? body.get("Environment").asText()
+                        : null;
+
+                    // Example: Extract values from SecurityContext
+                    String userId = (securityContext != null && securityContext.has("UserId"))
+                        ? securityContext.get("UserId").asText()
+                        : null;
+                    String token = (securityContext != null && securityContext.has("Token"))
+                        ? securityContext.get("Token").asText()
+                        : null;
+//                    String jarPath = request.has("JarPath")
+//                            ? request.get("JarPath").asText()
+//                            : properties.getProperty("java.app.jar.path");
 
 //                    List<String> arguments = new ArrayList<>();
 //                    if (request.has("Arguments") && request.get("Arguments").isArray()) {
