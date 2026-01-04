@@ -25,7 +25,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.example.camel.Application</mainClass>
+                  <mainClass>com.automaton.camel.Application</mainClass>
                 </transformer>
                 <transformer>
                   <resource>META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports</resource>

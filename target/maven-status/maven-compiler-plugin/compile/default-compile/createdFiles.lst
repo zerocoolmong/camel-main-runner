@@ -1,3 +1,5 @@
-com\example\camel\Application$1.class
-com\example\camel\Application.class
-com\example\camel\RunnerRoute.class
+Dto\HeaderContainer.class
+com\automaton\camel\RunnerRoute.class
+Dto\AutomationCommandQueueResponse.class
+com\automaton\camel\Application$1.class
+com\automaton\camel\Application.class

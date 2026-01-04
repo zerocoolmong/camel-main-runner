@@ -63,7 +63,7 @@
             <configuration>
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.example.camel.Application</mainClass>
+                  <mainClass>com.automaton.camel.Application</mainClass>
                 </transformer>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
                   <resource>META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports</resource>

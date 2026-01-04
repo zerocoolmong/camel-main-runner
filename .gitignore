@@ -1,0 +1,11 @@
+*.iml
+*.idea/
+/.idea/copilot.data.migration.edit.xml
+/.idea/workspace.xml
+/.idea/compiler.xml
+/.idea/encodings.xml
+
+*.log
+
+Reports/
+
